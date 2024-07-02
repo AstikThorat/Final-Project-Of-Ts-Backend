@@ -7,7 +7,7 @@ import com.ts.model.Tata;
 
 @Repository
 public interface TataRepository extends JpaRepository<Tata, Long> {
-
+public String finduser(String username);
 	
 
 }
