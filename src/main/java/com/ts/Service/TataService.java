@@ -21,6 +21,10 @@ public class TataService {
 		t.setPassward(password);
 		return tataRepository.save(t);
 	}
+	
+	public Tata findByName(String username) {
+		return tataRepository.findByusername(username);
+	}
 }
 
 
