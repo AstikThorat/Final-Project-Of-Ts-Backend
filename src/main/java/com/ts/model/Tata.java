@@ -1,5 +1,6 @@
 package com.ts.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,11 @@ public class Tata {
     private String username;
     private String phoneno;
     private String emailid;
-    private String passward;
+    private String password;
+    
+    @Column(columnDefinition = "LongText" )
+    private byte[] image;
+    
 	public long getId() {
 		return id;
 	}
@@ -39,21 +44,28 @@ public class Tata {
 	public void setEmailid(String emailid) {
 		this.emailid = emailid;
 	}
-	public String getPassward() {
-		return passward;
+	public String getPassword() {
+		return password;
 	}
-	public void setPassward(String passward) {
-		this.passward = passward;
+	public void setPassword(String password) {
+		this.password = password;
+	}
+   public byte[] getImage() {
+		return image;
+	}
+	public void setImage(byte[] image) {
+		this.image = image;
 	}
 	
 	public Tata() {}
 	
-	public Tata(long id, String username, String phoneno, String emailid, String passward) {
+	public Tata(long id, String username, String phoneno, String emailid, String password, byte[] image) {
 		this.id = id;
 		this.username = username;
 		this.phoneno = phoneno;
 		this.emailid = emailid;
-		this.passward = passward;
+		this.password = password;
+		this.image = image;
 	}
     
     
