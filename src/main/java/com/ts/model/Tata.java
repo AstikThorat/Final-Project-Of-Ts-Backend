@@ -17,7 +17,7 @@ public class Tata {
     private String emailid;
     private String password;
     
-    @Column(columnDefinition = "LongText" )
+    @Column(columnDefinition = "MEDIUMBLOB" )
     private byte[] image;
     
 	public long getId() {
@@ -54,6 +54,11 @@ public class Tata {
 		return image;
 	}
 	public void setImage(byte[] image) {
+		 final int MAX_SIZE = 1024 * 1024; // 1MB
+		    if (image.length > MAX_SIZE) {
+		        throw new IllegalArgumentException("Image size exceeds 1MB");
+		  }
+		    
 		this.image = image;
 	}
 	

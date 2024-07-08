@@ -2,6 +2,7 @@ package com.ts.Service;
 
 
 import java.util.Base64;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class TataService {
 		return tataRepository.save(t);
 	}
 	
-	public Tata findByName(String username) {
+	public List<Tata> findByName(String username) {
 		return tataRepository.findByusername(username);
 	}
 
